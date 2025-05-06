@@ -40,16 +40,15 @@ function gerarRelatorio() {
   document.getElementById('tardeN').textContent = registros.tarde.N;
   document.getElementById('tardeR').textContent = registros.tarde.R;
 }
-
 function limparDados() {
-  if (confirm("Tem certeza que deseja limpar os dados?")) {
-    registros.manha = { N: '--', R: '--' };
-    registros.tarde = { N: '--', R: '--' };
-    localStorage.setItem('registros', JSON.stringify(registros));
-    gerarRelatorio();
-    alert("Dados limpos com sucesso!");
+    if (confirm("Tem certeza que deseja limpar os dados?")) {
+      registros.manha = { N: '--', R: '--' };
+      registros.tarde = { N: '--', R: '--' };
+      localStorage.setItem('registros', JSON.stringify(registros));
+      gerarRelatorio();
+      alert("Dados limpos com sucesso!");
+    }
   }
-}
-
+  
 // Atualizar displays na inicialização
 document.addEventListener('DOMContentLoaded', atualizarDisplays);

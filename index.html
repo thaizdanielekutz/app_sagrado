@@ -1,44 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Contador Diário</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contador de Normalidade e Repetição</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <div class="contador">
-    <h2>CONTAGEM DE NORMALIDADE</h2>
-    <div class="botoes">
-      <button class="menos" onclick="alterarContador('normal', -1)">-</button>
-      <button class="mais" onclick="alterarContador('normal', 1)">+</button>
+  <div class="container">
+    <h3>CONTAGEM DE NORMALIDADE</h3>
+    <div class="contador">
+      <button class="botao menos" onclick="alterarContador('normal', -1)">−</button>
+      <button class="botao mais" onclick="alterarContador('normal', 1)">+</button>
     </div>
-    <div id="normalDisplay" class="valor">0</div>
-  </div>
+    <div class="display" id="normalDisplay">0</div>
 
-  <div class="contador">
-    <h2>CONTAGEM DE REPETIÇÃO</h2>
-    <div class="botoes">
-      <button class="menos" onclick="alterarContador('repeticao', -1)">-</button>
-      <button class="mais" onclick="alterarContador('repeticao', 1)">+</button>
+    <h3>CONTAGEM DE REPETIÇÃO</h3>
+    <div class="contador">
+      <button class="botao menos" onclick="alterarContador('repeticao', -1)">−</button>
+      <button class="botao mais" onclick="alterarContador('repeticao', 1)">+</button>
     </div>
-    <div id="repeticaoDisplay" class="valor">0</div>
+    <div class="display" id="repeticaoDisplay">0</div>
+
+    <button class="salvar-btn" onclick="salvar('manha')">Salvar Contagem Manhã</button>
+    <button class="salvar-btn" onclick="salvar('tarde')">Salvar Contagem Tarde</button>
+    <button onclick="limparDados()" class="limpar">Limpar Dados</button>
+
+
+    <button class="gerar-btn" onclick="gerarRelatorio()">Gerar Relatório Diário</button>
   </div>
 
-  <div class="acoes">
-    <button onclick="salvar('manha')">Salvar Contagem Manhã</button>
-    <button onclick="salvar('tarde')">Salvar Contagem Tarde</button>
-    <button class="limpar" onclick="limparDados()">Limpar Dados</button>
-    <button onclick="gerarRelatorio()">Gerar Relatório Diário</button>
-  </div>
-
-  <div id="relatorio" style="display:none;">
+  <div class="container" id="relatorio" style="display: none;">
     <h3>Relatório Diário</h3>
-    <p>Manhã: Normalidade - <span id="manhaN">--</span>, Repetição - <span id="manhaR">--</span></p>
-    <p>Tarde: Normalidade - <span id="tardeN">--</span>, Repetição - <span id="tardeR">--</span></p>
+    <table>
+      <tr>
+        <th colspan="2">MANHÃ</th>
+        <th colspan="2">TARDE</th>
+      </tr>
+      <tr>
+        <th>N</th><th>R</th><th>N</th><th>R</th>
+      </tr>
+      <tr>
+        <td id="manhaN">--</td>
+        <td id="manhaR">--</td>
+        <td id="tardeN">--</td>
+        <td id="tardeR">--</td>
+      </tr>
+    </table>
   </div>
 
   <script src="script.js"></script>
-
 </body>
 </html>
