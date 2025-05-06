@@ -1,54 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contador de Normalidade e Repetição</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Turnos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div>
-    <h3>CONTAGEM DE NORMALIDADE</h3>
-    <div class="contador">
-      <button class="botao menos" onclick="alterarContador('normal', -1)">−</button>
-      <button class="botao mais" onclick="alterarContador('normal', 1)">+</button>
+    <h1>Contagem de Turnos</h1>
+    
+    <div class="section">
+        <h2>Manhã (9:55)</h2>
+        <div class="display-container">
+            <div class="label">Normalidade</div>
+            <div id="manha-normal" class="display">0</div>
+            <button onclick="incrementar('manha-normal')">+</button>
+        </div>
+        <div class="display-container">
+            <div class="label">Repetição</div>
+            <div id="manha-repeticao" class="display">0</div>
+            <button onclick="incrementar('manha-repeticao')">+</button>
+        </div>
+        <button class="salvar" onclick="salvar('manha')">Salvar Manhã</button>
     </div>
-    <div class="display" id="normalDisplay">0</div>
 
-    <h3>CONTAGEM DE REPETIÇÃO</h3>
-    <div class="contador">
-      <button class="botao menos" onclick="alterarContador('repeticao', -1)">−</button>
-      <button class="botao mais" onclick="alterarContador('repeticao', 1)">+</button>
+    <div class="section">
+        <h2>Tarde (15:15)</h2>
+        <div class="display-container">
+            <div class="label">Normalidade</div>
+            <div id="tarde-normal" class="display">0</div>
+            <button onclick="incrementar('tarde-normal')">+</button>
+        </div>
+        <div class="display-container">
+            <div class="label">Repetição</div>
+            <div id="tarde-repeticao" class="display">0</div>
+            <button onclick="incrementar('tarde-repeticao')">+</button>
+        </div>
+        <button class="salvar" onclick="salvar('tarde')">Salvar Tarde</button>
     </div>
-    <div class="display" id="repeticaoDisplay">0</div>
 
-    <button class="salvar-btn" onclick="salvar('manha')">Salvar Contagem Manhã</button>
-    <button class="salvar-btn" onclick="salvar('tarde')">Salvar Contagem Tarde</button>
-    <button onclick="limparDados()" class="limpar">Limpar Dados</button>
+    <button class="limpar" onclick="limparDados()">Limpar Dados</button>
 
-
-    <button class="gerar-btn" onclick="gerarRelatorio()">Gerar Relatório Diário</button>
-  </div>
-
-  <div class="container" id="relatorio" style="display: none;">
-    <h3>Relatório Diário</h3>
-    <table>
-      <tr>
-        <th colspan="2">MANHÃ</th>
-        <th colspan="2">TARDE</th>
-      </tr>
-      <tr>
-        <th>N</th><th>R</th><th>N</th><th>R</th>
-      </tr>
-      <tr>
-        <td id="manhaN">--</td>
-        <td id="manhaR">--</td>
-        <td id="tardeN">--</td>
-        <td id="tardeR">--</td>
-      </tr>
-    </table>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
