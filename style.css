@@ -76,6 +76,10 @@ body {
     margin: 5px auto; 
     display: block;   
   }
+ 
+  .salvar-btn:first-of-type {
+    margin-top: 20px; /* Ajuste a margem conforme necessário */
+  }
   
   table {
     margin: 10px auto;
