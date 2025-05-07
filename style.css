@@ -17,8 +17,9 @@ body {
   }
   .contador {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* centraliza ambos */
     align-items: center;
+    gap: 40px; /* define o espaço entre os botões */
     margin-bottom: 10px;
   }
   .botao {
@@ -45,7 +46,7 @@ body {
     font-size: 24px;
     margin-bottom: 10px;
     margin: 10px auto; 
-    width: 80%; /* <-- adicionado para controlar a largura */
+    width: 66%; /* <-- adicionado para controlar a largura */
   }
   .limpar {
     background-color: #ff4d4d;
